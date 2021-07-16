@@ -60,7 +60,7 @@ func (c *clientNative) FrontendEnableSSLOffload(frontendName string, certDir str
 		bind.Ssl = true
 		bind.SslCertificate = certDir
 		if alpn {
-			bind.Alpn = "h2,http/1.1"
+			bind.Alpn = "http/1.1"
 		}
 		err = c.FrontendBindEdit(frontendName, *bind)
 	}
